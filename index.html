@@ -10,8 +10,7 @@
 
 <script>
 function myFunction() {
-  var x = "User-agent header sent: " + navigator.userAgent;
-  document.getElementById("demo").innerHTML = x;
+  navigator.managed.getSerialNumber().then(o => document.getElementById("demo").innerHTML = o);
 }
 </script>
 
