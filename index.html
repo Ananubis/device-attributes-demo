@@ -2,15 +2,23 @@
 <html>
 <body>
 
-<p>Click the button to display the user-agent header sent by the browser to the server.</p>
+<p>Click the button to display the result of Device Attributes API.</p>
 
 <button onclick="myFunction()">Try it</button>
 
-<p id="demo"></p>
+<p id="annotated_asset_id"></p>
+<p id="annotated_location"></p>
+<p id="directory_id"></p>
+<p id="hostname"></p>
+<p id="serial_number"></p>
 
 <script>
 function myFunction() {
-  navigator.managed.getSerialNumber().then(o => document.getElementById("demo").innerHTML = o);
+  navigator.managed.getAnnotatedAssetId().then(o => document.getElementById("annotated_asset_id").innerHTML = "Annotated asset id: " + o);
+  navigator.managed.getAnnotatedLocation().then(o => document.getElementById("annotated_location").innerHTML = "Annotated location: " + o);
+  navigator.managed.getDirectoryId().then(o => document.getElementById("directory_id").innerHTML = "Directory id: " + o);
+  navigator.managed.getHostname().then(o => document.getElementById("hostname").innerHTML = "Hostname: " + o);
+  navigator.managed.getSerialNumber().then(o => document.getElementById("serial_number").innerHTML = "Serial number: " + o);
 }
 </script>
 
